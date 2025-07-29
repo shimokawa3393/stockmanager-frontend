@@ -1,0 +1,14 @@
+
+services:
+  frontend:
+    build:
+      context: ./stockmanager-app
+      dockerfile: Dockerfile
+    env_file:
+      - stockmanager-app/.env
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./stockmanager-app:/app
+    stdin_open: true
+    tty: true
